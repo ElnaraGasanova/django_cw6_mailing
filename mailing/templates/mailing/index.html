@@ -1,0 +1,27 @@
+{% extends 'mailing/base.html' %}
+{% block content %}
+
+<div class="masthead">
+    <h2 class="text-left">Статистика сервиса</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Количество рассылок всего</th>
+        <th scope="col">Количество активных рассылок</th>
+        <th scope="col">Количество уникальных клиентов для рассылок:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{object_list|length}}</td>
+        <td>{{active_mailing_count}}</td>
+        <td>{{unique_clients_count}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<div class="row">
+    {% for object in object_list %}
+    {% endfor %}
+</div>
+{% endblock %}
