@@ -1,27 +1,33 @@
 {% extends 'mailing/base.html' %}
 {% load static %}
-{% block content%}
+{% block content %}
 <div class="col-12">
     <div class="row">
         <div class="col-6">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">
-                        {{object.title }}
+                        {{ object.title }}
                     </h3>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
-                        <p> {{object.content}}</p>
-                        <p> Дата публикации: {{object.published_date}}</p>
-                        <img class="card-img-top"
-                             src="/media/{{object.preview}}"
-                             alt="Card image cap">
-                    </ul>
+                    <div class="card-body">
+                        <table class="table"></table>
+                        <div class="card mb-4" style="width: 28rem;">
+                            <div class="card-body">
+                                <p class="card-text">{{ object.content }}</p>
+                                <p> Опубликовано {{ object.published_date }}</p>
+                                <img class="card-img-top"
+                                     src="/media/{{ object.preview }}"
+                                     alt="Card image cap">
+                                <div class="d-flex justify-content-between align-items-center">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            Количество просмотров: {{ object.views_count }}
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card-footer"></div>
-            Просмотры: {{ object.views_count }}
         </div>
     </div>
 </div>

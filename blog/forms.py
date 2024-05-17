@@ -7,4 +7,4 @@ class BlogForm(StyleFormMixin, forms.ModelForm):
     '''Класс стилизации формы Блога.'''
     class Meta:
         model = Blog
-        exclude = ('preview',)
+        fields = '__all__'

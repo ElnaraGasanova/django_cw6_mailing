@@ -1,12 +1,34 @@
 {% extends 'mailing/base.html' %}
+{% load static %}
 {% block content %}
-<div class="row">
-    {% for object in object_list %}
-    <div class="col-lg-4">
-        <h2> {{object|title}}</h2>
-        <p> {{object.content|slice:300}}</p>
-        <p><a class="btn btn-primary" href="{% url 'blog:view' object.pk %}" role="button">Подробнее &raquo;</a></p>
-    </div>
-    {% endfor %}
+<div class="col-12 mt-5 mb-5 text-center">
+    <h2>Публикации</h2>
 </div>
-{% endblock %}
+<div class="col-12 mb-5">
+    <a class="btn btn-outline-primary" href="{% url 'blog:blog_create' %}">Добавить публикацию</a>
+</div>
+<div class="container">
+    <div class="row{flex:auto;}">
+        {% for object in object_list %}
+        <div class="col-6">
+            <div class="card" style="width: 48rem;">
+                <img class="card-img-top"
+                     src="">
+                <div class="card-body">
+                    <h5 class="card-title-center">{{ object.title|title }}</h5>
+                    <p class="card-text-center">{{ object.content|slice:100 }}</p>
+                    <p> Опубликовано {{ object.published_date }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn">
+                            <a href="{% url 'blog:blog_detail' object.pk %}" class="btn btn-info">Подробнее</a>
+                            <a href="{% url 'blog:blog_update' object.pk %}" class="btn btn-success">Редактировать</a>
+                            <a href="{% url 'blog:blog_delete' object.pk %}" class="btn btn-danger">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</div>
