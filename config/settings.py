@@ -141,7 +141,7 @@ SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 #настройка кеширования
-CACHE_ENABLED = os.getenv('CACHE_ENABLED') == 'True'   #если уст-но False,значит мы раб-ем лок-но и кеш-ть ничего не н.
+CACHE_ENABLED = os.getenv('CACHE_ENABLED')   #если уст-но False,значит мы раб-ем лок-но и кеш-ть ничего не н.
 
 if CACHE_ENABLED:
     CACHES = {
@@ -150,3 +150,6 @@ if CACHE_ENABLED:
             "LOCATION": os.getenv('CACHE_LOCATION'),
         }
     }
+
+# APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+# APSCHEDULER_RUN_NOW_TIMEOUT = 25  # Seconds

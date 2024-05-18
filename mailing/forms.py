@@ -22,17 +22,10 @@ class ClientForm(StyleFormMixin, forms.ModelForm):
 
 class MailingForm(StyleFormMixin, forms.ModelForm):
 
-    def __init__(self, *args, **kwargs):
-        self.request = kwargs.pop('request')
-        user = self.request.user
-        super().__init__(*args, **kwargs)
-        self.fields['client'].queryset = Client.objects.filter(owner=user)
-        self.fields['message'].queryset = Message.objects.filter(owner=user)
-
     class Meta:
         model = Mailing
         fields = '__all__'
-        exclude = ('date_next', 'is_active', 'owner')
+        exclude = ('date_next', 'owner')
 
         widgets = {
             'start_date': DateTimeInput(attrs={'placeholder': 'ДД.ММ.ГГГГ ЧЧ:ММ:СС', 'type': 'datetime-local'}),

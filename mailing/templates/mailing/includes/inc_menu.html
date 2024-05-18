@@ -22,7 +22,7 @@
                 <a class="nav-link" href="{% url 'mailing:message_list' %}">Сообщения для рассылки</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'mailing:mail_list' %}">Рассылки</a>
+                <a class="nav-link" href="{% url 'mailing:mailing_list' %}">Рассылки</a>
             </li>
             {% endif %}
             {% if perms.users.set_is_active %}
