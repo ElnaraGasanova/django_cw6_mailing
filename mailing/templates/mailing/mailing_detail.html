@@ -1,0 +1,27 @@
+{% extends 'mailing/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <h5 class="card-header"> Наименование рассылки: {{ object.name }} </h5>
+                <div class="card-body">
+                    <p class="card-text">Клиент сервиса: {{ object.client }}</p>
+                    <ul>
+                        {% for value in object.clients.all.values_list %}
+                        <li>{{ value.1 }}</li>
+                        {% endfor%}
+                    </ul>
+                    <p class="card-text">Сообщение: {{ object.message }} </p>
+                    <p class="card-text">Дата начала рассылки: {{ object.started }} </p>
+                    <p class="card-text">Дата окончания рассылки: {{ object.finished }} </p>
+                    <p class="card-text">Периодичность рассылки: {{ object.periodicity }} </p>
+                    <p class="card-text">Статус рассылки: {{ object.status }} </p>
+                    <p class="card-text">Активность рассылки: {{ object.is_active }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
