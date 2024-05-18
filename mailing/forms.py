@@ -10,15 +10,13 @@ class StyleFormMixin:
         super().__init__(*args, **kwargs)
 
         for field_name, field in self.fields.items():
-            if field_name == 'is_active':
-                field.widget.attrs['class'] = 'form-check-input'
-            else:
-                field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['class'] = 'form-control'
 
 
 class ClientForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Client
+        fields = '__all__'
         exclude = ('owner',)
 
 
@@ -33,6 +31,7 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
 
     class Meta:
         model = Mailing
+        fields = '__all__'
         exclude = ('date_next', 'is_active', 'owner')
 
         widgets = {
@@ -44,4 +43,5 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
 class MessageForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Message
+        fields = '__all__'
         exclude = ('owner',)

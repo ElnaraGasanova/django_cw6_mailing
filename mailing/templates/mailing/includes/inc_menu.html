@@ -8,6 +8,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'mailing:index' %}">Главная</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'mailing:contacts' %}">Контакты</a>
+            </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'blog:blog_list' %}">Публикации</a>
