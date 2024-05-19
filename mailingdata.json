@@ -52,6 +52,32 @@
     }
   },
   {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2024-05-19T19:44:11.244Z",
+      "user": 2,
+      "content_type": 6,
+      "object_id": "2",
+      "object_repr": "skypro.msk@yandex.ru",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2024-05-19T19:44:26.535Z",
+      "user": 2,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "admin@sky.pro",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+    }
+  },
+  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -643,18 +669,18 @@
   },
   {
     "model": "sessions.session",
-    "pk": "ng0mbqtfhb3fq11ssh41g0hzgvas5shp",
+    "pk": "2rugeo2q4y9gvmv6ro0kl97phyj9batr",
     "fields": {
-      "session_data": ".eJxVjDsOwyAQRO9CHSGDMZ-U6X0GtMtCcBKBZOwqyt2DJReJppv3Zt7Mw75lv7e4-oXYlUl2-e0QwjOWA9ADyr3yUMu2LsgPhZ-08blSfN1O9-8gQ8t9PbqUHDqRHAyih4Y4aTspjGpMJCg4FIQWAZXW2FWQxjijKUpjhVLs8wXuejgO:1s8EGe:4KIoDUjr73XAb94AjZBjOSlS496kx-RLiVFU53Q8qYo",
-      "expire_date": "2024-06-01T07:14:08.622Z"
+      "session_data": ".eJxVjEsOwiAUAO_C2hAof5fuewby3gOkamhS2pXx7oakC93OTObNIhx7jUfPW1wSuzLDLr8MgZ65DZEe0O4rp7Xt24J8JPy0nc9ryq_b2f4NKvQ6ti6TRRmKks5atFISeKu8mTQlQEI_hWKsUp4kOBGwhBxMNlqI5LU07PMF2HA3VA:1s8n7d:IGf6kyd9Kas3gdQIWwjN1yjPTafuN-bTbZYdvP5JKas",
+      "expire_date": "2024-06-02T20:27:09.041Z"
     }
   },
   {
     "model": "sessions.session",
-    "pk": "r27uys1yd1mydl6uftghbx121n6piezc",
+    "pk": "lt76yt83m9xvz8fiou4c67l5jvplz0kw",
     "fields": {
-      "session_data": ".eJxVjDsOwyAQRO9CHSGDMZ-U6X0GtMtCcBKBZOwqyt2DJReJppv3Zt7Mw75lv7e4-oXYlUl2-e0QwjOWA9ADyr3yUMu2LsgPhZ-08blSfN1O9-8gQ8t9PbqUHDqRHAyih4Y4aTspjGpMJCg4FIQWAZXW2FWQxjijKUpjhVLs8wXuejgO:1s8ENs:cjHKD1bFHex9zPjX_8Eo5JOSleLfJjLd5vX9azQJcyA",
-      "expire_date": "2024-06-01T07:21:36.004Z"
+      "session_data": ".eJxVjDsOwjAQBe_iGln-x6ak5wzWrnfBAeRIcVIh7k4ipYD2zcx7iwzrUvPaec4jibPw4vS7IZQntx3QA9p9kmVqyzyi3BV50C6vE_Hrcrh_BxV63eqINilwxZfBaorOm0SKVUoOA9jAPvANbTCoKfkYNYTNVnpgE4NNZMXnC8rPNu0:1s8n9B:s8OZjMBTt0ytwYP_IxIzs_QrrgU4VjNr9JO6-fzthm0",
+      "expire_date": "2024-06-02T20:28:45.739Z"
     }
   },
   {
@@ -680,36 +706,59 @@
     "model": "users.user",
     "pk": 2,
     "fields": {
-      "password": "pbkdf2_sha256$720000$XJEWyh3u0Yqt0zmE4d14qN$ypvZD9DXnAE78R8w/zG//ZT2kDZOKyEXjTCynSZ21c0=",
-      "last_login": "2024-05-18T07:21:36.002Z",
+      "password": "pbkdf2_sha256$720000$Hh4rprQIsqXA4nuEei2J5r$jibFl83NJfM05l0o6DTjQPtyUJrnZP9qpYBPdHpc6zY=",
+      "last_login": "2024-05-19T18:57:49Z",
       "is_superuser": true,
       "first_name": "Эльнара",
       "last_name": "",
       "is_staff": true,
       "is_active": true,
-      "date_joined": "2024-05-16T23:09:27.301Z",
-      "email": "skypro.msk@yandex.ru",
-      "phone": "111311131113",
+      "date_joined": "2024-05-16T23:09:27Z",
+      "email": "skypro2.msk@yandex.ru",
+      "phone": "1113",
       "token": "6c751674f4fbbbc5aad877b58c284131",
       "groups": [],
-      "user_permissions": []
+      "user_permissions": [
+        46
+      ]
     }
   },
   {
     "model": "users.user",
     "pk": 4,
     "fields": {
-      "password": "pbkdf2_sha256$720000$z4JQ3VfaFurZQuiCzylW9O$TMmHiy50vlvFq/nTfRixcrcaHXIN70e99E8HRG/COa0=",
-      "last_login": null,
+      "password": "pbkdf2_sha256$720000$ZdZJ61KgbO2zeezab8FNuQ$j2eREpT09vzhyZEui2TyG3v8vLKMrxuzp3Dy1YXJ/+o=",
+      "last_login": "2024-05-18T21:57:07Z",
       "is_superuser": true,
       "first_name": "Admin",
       "last_name": "Adminov",
       "is_staff": true,
       "is_active": true,
-      "date_joined": "2024-05-18T13:14:00.169Z",
+      "date_joined": "2024-05-18T13:14:00Z",
       "email": "admin@sky.pro",
       "phone": null,
       "token": null,
+      "groups": [],
+      "user_permissions": [
+        46
+      ]
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$6HKjQKJJDX8ihDKCloY1HN$u14grc+Rgc7l5TYsE53/0+EIPdTeB5mLximnnGMr3U8=",
+      "last_login": "2024-05-19T20:28:45.738Z",
+      "is_superuser": true,
+      "first_name": "Elnara",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-05-19T19:49:09.130Z",
+      "email": "skypro.msk@yandex.ru",
+      "phone": null,
+      "token": "6a39cbefcad0c14b",
       "groups": [],
       "user_permissions": []
     }
@@ -754,10 +803,28 @@
     }
   },
   {
+    "model": "mailing.message",
+    "pk": 2,
+    "fields": {
+      "title": "Тестирование закладки Сообщения",
+      "message": "Сообщения для рассылки:\r\nСоздание - ОК.\r\nРедактирование - ОК.\r\nУдаление - ОК.",
+      "owner": 4
+    }
+  },
+  {
+    "model": "mailing.message",
+    "pk": 4,
+    "fields": {
+      "title": "Тест2",
+      "message": "Тест2",
+      "owner": 4
+    }
+  },
+  {
     "model": "mailing.mailing",
     "pk": 1,
     "fields": {
-      "name": "рассылка",
+      "name": "рассылка редактирование",
       "message": 1,
       "started": "2024-05-17T15:10:11Z",
       "date_next": "2024-05-17T15:12:11Z",
@@ -767,6 +834,25 @@
       "is_active": true,
       "owner": 2,
       "client": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "mailing.mailing",
+    "pk": 2,
+    "fields": {
+      "name": "рассылка2",
+      "message": 1,
+      "started": "2024-05-18T21:55:23Z",
+      "date_next": "2024-05-18T21:56:13.195Z",
+      "finished": "2024-05-19T21:55:23Z",
+      "periodicity": "daily",
+      "status": "created",
+      "is_active": true,
+      "owner": 4,
+      "client": [
+        4,
         6
       ]
     }
@@ -789,7 +875,7 @@
       "content": "Определение данных модели в Django",
       "preview": "",
       "published_date": "2024-05-17",
-      "views_count": 6
+      "views_count": 7
     }
   },
   {
@@ -800,7 +886,7 @@
       "content": "basic-django создание ок\r\nbasic-django редактирование ок\r\nbasic-django отмена удаления ок\r\nbasic-django удаление ок",
       "preview": "",
       "published_date": "2024-05-17",
-      "views_count": 6
+      "views_count": 7
     }
   },
   {
@@ -812,6 +898,17 @@
       "preview": "",
       "published_date": "2024-05-18",
       "views_count": 1
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 8,
+    "fields": {
+      "title": "Суперюзер создается, все ок.",
+      "content": "Суперюзер создается, все ок.",
+      "preview": "",
+      "published_date": null,
+      "views_count": 0
     }
   }
 ]

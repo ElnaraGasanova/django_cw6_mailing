@@ -100,31 +100,3 @@ def get_users_list(request):
         'title': 'Список пользователей сервиса',
     }
     return render(request, 'users/user_list.html', context)
-
-
-# def activate_user(request):
-#     '''Функция активации пользователя.'''
-#     key = request.GET.get('token')
-#     current_user = User.objects.filter(is_active=False)
-#     for user in current_user:
-#         if str(user.token) == str(key):
-#             user.is_active = True
-#             user.token = None
-#             user.save()
-#     response = redirect(reverse_lazy('users:login'))
-#     return response
-#
-#
-# def generate_new_password(request):
-#     '''Функция смены пароля.'''
-#     new_password = get_new_password()
-#     send_mail(
-#         subject='Вы сменили пароль',
-#         message=f'Ваш новый пароль: {new_password}',
-#         from_email=settings.EMAIL_HOST_USER,
-#         recipient_list=[request.user.email]
-#     )
-#     request.user.set_password(new_password)
-#     request.user.save()
-#
-#     return redirect(reverse('users:login'))
