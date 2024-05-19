@@ -19,7 +19,7 @@ class UserRegisterForm(StyleFormMixin, UserCreationForm):
         fields = ('email', 'password1', 'password2',)
 
 
-class UserProfileForm(StyleFormMixin, UserChangeForm):
+class UserUpdateView(StyleFormMixin, UserChangeForm):
     '''Класс изменения данных пользователя.'''
     class Meta:
         model = User
