@@ -4,7 +4,7 @@ from mailing.models import Client, Mailing, Message
 
 
 class StyleFormMixin:
-    '''Класс стилизации формы'''
+    '''Класс стилизации формы.'''
     def __init__(self, *args, **kwargs):
         '''Функция стилизации формы'''
         super().__init__(*args, **kwargs)
@@ -14,6 +14,7 @@ class StyleFormMixin:
 
 
 class ClientForm(StyleFormMixin, forms.ModelForm):
+    '''Форма заполнения при создании/редактировании Клиента сервиса.'''
     class Meta:
         model = Client
         fields = '__all__'
@@ -21,7 +22,7 @@ class ClientForm(StyleFormMixin, forms.ModelForm):
 
 
 class MailingForm(StyleFormMixin, forms.ModelForm):
-
+    '''Форма заполнения при создании/редактировании Рассылки.'''
     class Meta:
         model = Mailing
         fields = '__all__'
@@ -34,7 +35,8 @@ class MailingForm(StyleFormMixin, forms.ModelForm):
 
 
 class MessageForm(StyleFormMixin, forms.ModelForm):
+    '''Форма заполнения при создании/редактировании
+    Сообщения для рассылки.'''
     class Meta:
         model = Message
         fields = '__all__'
-        exclude = ('owner',)

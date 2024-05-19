@@ -8,6 +8,7 @@ from mailing.models import Mailing, Client, Message, Log
 
 
 class MailingListView(LoginRequiredMixin, ListView):
+    '''Класс всех рассылок.'''
     model = Mailing
 
     def get_context_data(self, **kwargs):
@@ -16,10 +17,12 @@ class MailingListView(LoginRequiredMixin, ListView):
 
 
 class MailingDetailView(DetailView):
+    '''Класс просмотра рассылки.'''
     model = Mailing
 
 
 class MailingCreateView(LoginRequiredMixin, CreateView):
+    '''Класс создания новой рассылки.'''
     model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailing:mailing_list')
@@ -32,6 +35,7 @@ class MailingCreateView(LoginRequiredMixin, CreateView):
 
 
 class MailingUpdateView(LoginRequiredMixin, UpdateView):
+    '''Класс редактирования рассылки.'''
     model = Mailing
     form_class = MailingForm
     success_url = reverse_lazy('mailing:mailing_list')
@@ -45,48 +49,57 @@ class MailingUpdateView(LoginRequiredMixin, UpdateView):
 
 
 class MailingDeleteView(LoginRequiredMixin, DeleteView):
+    '''Класс удаления рассылки.'''
     model = Mailing
     success_url = reverse_lazy('mailing:mailing_list')
 
 
 class ClientListView(ListView):
+    '''Класс всех клиентов сервиса.'''
     model = Client
 
 
 class ClientCreateView(LoginRequiredMixin, CreateView):
+    '''Класс создания нового клиента сервиса.'''
     model = Client
     form_class = ClientForm
     success_url = reverse_lazy('mailing:client_list')
 
 
 class ClientUpdateView(LoginRequiredMixin, UpdateView):
+    '''Класс редактирования клиента сервиса.'''
     model = Client
     form_class = ClientForm
     success_url = reverse_lazy('mailing:client_list')
 
 
 class ClientDeleteView(DeleteView):
+    '''Класс удаления клиента сервиса.'''
     model = Client
     success_url = reverse_lazy('mailing:client_list')
 
 
 class MessageListView(ListView):
+    '''Класс всех сообщений рассылок.'''
     model = Message
 
 
 class MessageCreateView(LoginRequiredMixin, CreateView):
+    '''Класс создания нового сообщения рассылки.'''
     model = Message
     form_class = MessageForm
     success_url = reverse_lazy('mailing:message_list')
 
 
 class MessageUpdateView(LoginRequiredMixin, UpdateView):
+    '''Класс редактирования сообщения рассылки.'''
     model = Message
     form_class = MessageForm
     success_url = reverse_lazy('mailing:message_list')
 
 
 class MessageDeleteView(DeleteView):
+    '''Класс удаления сообщения рассылки.'''
     model = Message
     success_url = reverse_lazy('mailing:message_list')
 
