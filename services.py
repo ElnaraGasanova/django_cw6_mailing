@@ -57,10 +57,10 @@ def my_job():
                             fail_silently=False
                         )
                         mailing_log = Log.objects.create(
-                            attempt_time=mailing.started,
-                            attempt_status=True,
-                            server_response=response,
-                            mailing=mailing,
+                            last_mailing=mailing.started,
+                            mail_status=True,
+                            mail_response=response,
+                            mailing_name=mailing,
                             client=client
                         )
                         mailing_log.save()
@@ -68,10 +68,10 @@ def my_job():
                         print('mailing_log сохранен')
                     except SMTPException as error:
                         mailing_log = Log.objects.create(
-                            attempt_time=mailing.started,
-                            attempt_status=False,
-                            server_response=error,
-                            mailing=mailing,
+                            last_mailing=mailing.started,
+                            mail_status=False,
+                            mail_response=error,
+                            mailing_name=mailing,
                             client=client
                         )
                         mailing_log.save()

@@ -1,0 +1,61 @@
+АЛГОРИТМ ВЫПОЛНЕНИЯ!
+
+venv\Scripts\activate
+добавляем файл Гитигнор
+привязываем профиль Гитхаб
+django-admin startproject config .
+pip install django psycopg2 pillow
+pip install python-dotenv
+pip freeze > requirements.txt
+python manage.py startapp users
+добавляем приложение в settings.py
+Первоначальные настройки settings.py
+python manage.py startapp mailing
+добавляем приложение в settings.py
+python manage.py startapp blog
+добавляем приложение в settings.py
+создаем БД в pgAdmin!!!
+проверяем подключение к pgAdmin командой:
+psql -U postgres
+
+заполняем Модели приложения mailing, применяем миграции
+python manage.py makemigrations
+python manage.py migrate
+заполняем Админку приложения mailing
+описываем класс стилизации формы в mailing/forms.py
+описываем Модель приложения blog, применяем миграции
+заполняем Админку приложения blog
+описываем класс стилизации формы в blog/forms.py
+описываем Модель приложения users, применяем миграции
+заполняем Админку приложения users
+описываем класс стилизации формы в users/forms.py
+регистрируем урлы приложений в папке config
+описываем CRUD-ы, урлы, создаем html-ки
+!!!!! запускаем создание сукперюзера С ФАЙЛА csu!!! командой:
+python manage.py csu
+
+просмотр сведений по пользователю через shell:
+python manage.py shell
+from users.models import User
+u = User.objects.get(pk=4)
+u.__dict__
+exit
+
+выгрузить данные из БД без иероглифов!!! команда:
+python -Xutf8 manage.py dumpdata -o mailingdata.json
+
+!!! если слетел/отключился redis (у меня после перезагрузки ноута!), то
+нужно его заново запустить! сначала запускаем wsl
+(ранее был установлен на ноут, ищем через строку поиска!) и в
+командной строке wsl вводим следующие команды:
+service redis-server start
+redis-cli ping
+в ответ должно вернуться PONG
+значит редис запущен!
+
+#python manage.py loaddata mailingdata.json ИЛИ
+#python manage.py loaddata mailingdata.json -o
+pip install flake8
+flake8 blog
+python manage.py runserver
+python manage.py runapscheduler
