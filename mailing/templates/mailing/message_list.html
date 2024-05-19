@@ -1,0 +1,37 @@
+{% extends 'mailing/base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-12 mb-5">
+    {% if not user.is_staff or user.is_superuser %}
+    <p><a class="btn btn-primary" href="{% url 'mailing:create_message' %}" role="button">Добавить сообщение для
+        рассылки</a></p>
+    {% endif %}
+</div>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Тема письма</th>
+        <th scope="col">Содержимое письма</th>
+        {% if user.is_staff or user.is_superuser %}
+        <th scope="col">Автор</th>
+        {% endif %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for object in object_list %}
+    <tr>
+        <td>{{object|slice:100}}</td>
+        <td>{{object.message|slice:100}}</td>
+        {% if user.is_staff or user.is_superuser %}
+        <td>{{object.owner}}</td>
+        {% endif %}
+        <td><a href="{% url 'mailing:message_list' %}" class="btn btn-primary">Посмотреть</a></td>
+        {% if not user.is_staff or user.is_superuser %}
+        <td><a href="{% url 'mailing:update_message' object.pk %}" class="btn btn-success">Редактировать</a></td>
+        <td><a href="{% url 'mailing:delete_message' object.pk %}" class="btn btn-danger">Удалить</a></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
