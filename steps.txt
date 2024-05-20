@@ -61,6 +61,6 @@ flake8 blog
 python manage.py runserver
 python manage.py runapscheduler
 
-
-
-                <a class="nav-link" href="{% url 'users:logout' %}">Выйти</a>
+снести Джанго 5 и установить 4.2.2
+pip uninstall django
+pip install Django==4.2.2
