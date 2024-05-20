@@ -7,6 +7,8 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views import View
 from django.views.generic import CreateView, UpdateView
+
+from mailing.models import Mailing
 from users.forms import UserRegisterForm, UserUpdateView
 from users.models import User
 
@@ -64,14 +66,16 @@ def generate_new_password(request):
     request.user.save()
     return redirect(reverse('users:login'))
 
+@login_required
+@permission_required('mailing.set_is_active')
 def toogle_activity(request, pk):
-    user_item = get_object_or_404(User, pk=pk)
-    if user_item.is_active:
-        user_item.is_active = False
+    mailing_item = get_object_or_404(Mailing, pk=pk)
+    if mailing_item.is_active:
+        mailing_item.is_active = False
     else:
-        user_item.is_active = True
-    user_item.save()
-    return redirect('users:login')
+        mailing_item.is_active = True
+    mailing_item.save()
+    return redirect(reverse('mailing:mailing_list'))
 
 
 class VerifyCodeView(View):
@@ -99,4 +103,4 @@ def get_users_list(request):
         'object_list': users_list,
         'title': 'Список пользователей сервиса',
     }
-    return render(request, 'users/user_list.html', context)
+    return render(request, 'users/login.html', context)
