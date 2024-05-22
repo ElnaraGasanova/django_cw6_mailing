@@ -6,6 +6,7 @@ from blog.models import Blog
 
 class BlogListView(ListView):
     model = Blog
+    queryset = Blog.objects.order_by('-published_date')[:3]
 
 
 class BlogCreateView(CreateView):
