@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 # Вы должны использовать это для обертывания любых запланированных вами заданий, которые каким-либо
 # образом обращаются к базе данных Django.
 
+
 @util.close_old_connections
 def delete_old_job_executions(max_age=604_800):
     """

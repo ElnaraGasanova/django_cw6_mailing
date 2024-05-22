@@ -66,6 +66,7 @@ def generate_new_password(request):
     request.user.save()
     return redirect(reverse('users:login'))
 
+
 @login_required
 @permission_required('mailing.set_is_active')
 def toogle_activity(request, pk):
@@ -94,6 +95,7 @@ class VerifyCodeView(View):
             return redirect('users:login')
 
         return redirect('users:new_password')
+
 
 @login_required
 @permission_required(['users.view_user', 'users.set_is_active'])

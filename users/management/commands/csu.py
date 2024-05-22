@@ -15,6 +15,6 @@ class Command(BaseCommand):
         user.set_password('QWErty111')
         user.save()
 
-#авториз.пользователь
-#skypro.msk@yandex.ru
-#Django@147
+# авториз.пользователь
+# skypro.msk@yandex.ru
+# Django@147

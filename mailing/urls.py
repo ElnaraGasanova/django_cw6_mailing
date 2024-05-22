@@ -1,6 +1,6 @@
 from django.urls import path
 from mailing.apps import MailingConfig
-from mailing.views import (IndexView, ClientListView, ClientCreateView, ClientUpdateView,ClientDeleteView,
+from mailing.views import (IndexView, ClientListView, ClientCreateView, ClientUpdateView, ClientDeleteView,
                            MessageListView, MessageCreateView, MessageUpdateView, MessageDeleteView, MailingListView,
                            MailingDetailView, MailingCreateView, MailingUpdateView, MailingDeleteView, contacts)
 from users.views import toogle_activity

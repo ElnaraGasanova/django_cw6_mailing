@@ -119,6 +119,7 @@ class IndexView(TemplateView):
         context['active_mailing_count'] = active_mailing_count
         return context
 
+
 def contacts(request):
     context = {
         'title': 'Контакты',

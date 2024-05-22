@@ -132,16 +132,16 @@ LOGIN_URL = '/users/'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')      #указываем свою yandex почту
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')        #указываем пароль для ПРИЛОЖЕНИЯ!!! а НЕ почты!!!
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')      # указываем свою yandex почту
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')        # указываем пароль для ПРИЛОЖЕНИЯ!!! а НЕ почты!!!
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-#настройка кеширования
-CACHE_ENABLED = os.getenv('CACHE_ENABLED')   #если уст-но False,значит мы раб-ем лок-но и кеш-ть ничего не н.
+# настройка кеширования
+CACHE_ENABLED = os.getenv('CACHE_ENABLED')   # если уст-но False,значит мы раб-ем лок-но и кеш-ть ничего не н.
 
 if CACHE_ENABLED:
     CACHES = {
