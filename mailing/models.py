@@ -82,6 +82,7 @@ class Log(models.Model):
     last_mailing = models.DateTimeField(auto_now=True, verbose_name='Дата и время последней попытки')
     mail_status = models.CharField(max_length=100, verbose_name='Статус попытки', **NULLABLE)
     mail_response = models.CharField(max_length=100, verbose_name='Ответ почтового сервера', **NULLABLE)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name='Клиент рассылки', **NULLABLE)
 
     class Meta:
         verbose_name = 'Лог'
